@@ -24,15 +24,15 @@ export const Profile = ({user:{avatar,username,tag,location, stats}}) =>(
     <StatList>
       <StatListItem>
         <StatLabel>Followers</StatLabel>
-        <StatLabel>{stats.followers}</StatLabel>
+        <StatValue>{stats.followers}</StatValue>
       </StatListItem>
       <StatListItem>
         <StatLabel>Views</StatLabel>
-        <StatLabel>{stats.views}</StatLabel>
+        <StatValue>{stats.views}</StatValue>
       </StatListItem>
       <StatListItem>
         <StatLabel>Likes</StatLabel>
-        <StatLabel>{stats.likes}</StatLabel>
+        <StatValue>{stats.likes}</StatValue>
       </StatListItem>
     </StatList>
   </Container>
