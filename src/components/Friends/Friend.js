@@ -1,18 +1,25 @@
-
 import PropTypes from 'prop-types';
 
-export const FriendList = ({friend: {avatar, name: username, isOnline},}) => {
-  return(<li class="item">
-  <span class="status">{isOnline}</span>
-  <img class="avatar" src={avatar} alt="User avatar" width="48"/>
-  <p class="name">{username}</p>
-</li>)
-}
-
-FriendList.propTypes = {
-  friend: PropTypes.shape({
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
-  }),
+import {
+  ListItem,
+  StatusSpan,
+  Image,
+  FriendsName,
+} from './Friend.styled';
+const Friend = ({ avatar, name, isOnline }) => {
+  return (
+    <ListItem>
+      <StatusSpan status={isOnline}></StatusSpan>
+      <Image src={avatar} alt="User avatar" width="48" />
+      <FriendsName>{name}</FriendsName>
+    </ListItem>
+  );
 };
+
+Friend.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};
+
+export default Friend;

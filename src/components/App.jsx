@@ -1,13 +1,16 @@
-import UserProfile from '../user.json';
-import DataStatistics from '../data.json';
-import Friends from '../Friends.json';
-import transactions from "../transactions.json" ;
+import { GlobalStyles } from './GlobalStyle';
+import UserProfile from './Data/user.json';
+import DataStatistics from './Data/data.json';
+import Friends from './Data/Friends.json';
+import transactions from "./Data/transactions.json" ;
 
 
 import { Profile } from "./Profile/Profile";
 import { Statistic } from './Statistics/Statistic';
 import { FriendListItem } from './Friends/FriendListItem';
-import {TransactionHistory} from './Transaction/TransactionHistory.js'
+import {TransactionHistory} from './Transaction/TransactionHistory.js';
+
+
 
 
 
@@ -17,20 +20,12 @@ import {TransactionHistory} from './Transaction/TransactionHistory.js'
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div>
+      <GlobalStyles/>
       <Profile user={UserProfile}/>
       <Statistic stats={DataStatistics}/>
       <FriendListItem friends={Friends}/>
-      <TransactionHistory items={transactions}/>
+      <TransactionHistory transactions={transactions}/>
     </div>
   );
 };
